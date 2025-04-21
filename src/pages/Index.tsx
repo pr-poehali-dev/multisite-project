@@ -1,8 +1,10 @@
 
 import Layout from "@/components/layout";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { Link } from "react-router-dom";
+import { Lightbulb, Tool, Clock, Shield } from "lucide-react";
 
 const Index = () => {
   return (
@@ -11,14 +13,14 @@ const Index = () => {
       <section className="bg-gradient-to-r from-primary/80 to-primary py-16 text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h1 className="text-4xl font-bold mb-4">Добро пожаловать на наш сайт</h1>
-            <p className="text-xl mb-8">Мы предлагаем лучшие решения для вашего бизнеса</p>
-            <div className="flex justify-center gap-4">
+            <h1 className="text-4xl font-bold mb-4">Услуги электрика в Колпино</h1>
+            <p className="text-xl mb-8">Выполняю все виды электромонтажных работ любой сложности</p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button asChild size="lg">
-                <Link to="/services">Наши услуги</Link>
+                <a href="tel:+79500308830">Позвонить сейчас</a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="/contacts">Связаться с нами</Link>
+                <Link to="/services">Узнать цены</Link>
               </Button>
             </div>
           </div>
@@ -28,43 +30,64 @@ const Index = () => {
       {/* Преимущества */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Наши преимущества</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <h2 className="text-3xl font-bold text-center mb-12">Почему выбирают меня</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card>
-              <CardHeader>
+              <CardHeader className="flex flex-row items-center gap-2">
+                <Lightbulb className="h-8 w-8 text-primary" />
+                <CardTitle>Опыт</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Более 10 лет опыта электромонтажных работ в Колпино и области.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="flex flex-row items-center gap-2">
+                <Tool className="h-8 w-8 text-primary" />
                 <CardTitle>Качество</CardTitle>
               </CardHeader>
               <CardContent>
-                <p>Мы гарантируем высокое качество всех наших услуг и продуктов.</p>
+                <p>Использую профессиональный инструмент и качественные материалы.</p>
               </CardContent>
             </Card>
             <Card>
-              <CardHeader>
-                <CardTitle>Надежность</CardTitle>
+              <CardHeader className="flex flex-row items-center gap-2">
+                <Clock className="h-8 w-8 text-primary" />
+                <CardTitle>Оперативность</CardTitle>
               </CardHeader>
               <CardContent>
-                <p>Наши клиенты доверяют нам уже более 10 лет.</p>
+                <p>Быстрый выезд на объект и выполнение работ в кратчайшие сроки.</p>
               </CardContent>
             </Card>
             <Card>
-              <CardHeader>
-                <CardTitle>Профессионализм</CardTitle>
+              <CardHeader className="flex flex-row items-center gap-2">
+                <Shield className="h-8 w-8 text-primary" />
+                <CardTitle>Гарантия</CardTitle>
               </CardHeader>
               <CardContent>
-                <p>Наша команда состоит из опытных профессионалов своего дела.</p>
+                <p>Предоставляю гарантию на все выполненные работы.</p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
+      {/* YouTube видео */}
+      <section className="py-12 bg-muted">
+        <div className="container mx-auto px-4">
+          <YouTubeEmbed channelId="@elektrikkolpino" />
+        </div>
+      </section>
+
       {/* Блок с призывом к действию */}
       <section className="py-16 bg-secondary">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Готовы начать работу с нами?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">Свяжитесь с нами сегодня, и мы обсудим, как можем помочь вашему бизнесу развиваться.</p>
+          <h2 className="text-3xl font-bold mb-4">Нужен электрик?</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">Свяжитесь со мной прямо сейчас, и я решу вашу проблему!</p>
           <Button asChild size="lg">
-            <Link to="/contacts">Свяжитесь с нами</Link>
+            <a href="tel:+79500308830">
+              Позвонить: +7 (950) 030-88-30
+            </a>
           </Button>
         </div>
       </section>
